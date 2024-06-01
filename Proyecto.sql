@@ -11,6 +11,9 @@ CREATE TABLE Cliente(
     FOREIGN KEY (com_codigo) REFERENCES Comuna(com_codigo)
 );
 
+-- Se cambia longitud del correo 01-06-24
+ALTER TABLE Cliente MODIFY (cli_correo_electronico VARCHAR2(40));
+
 CREATE TABLE Comuna(
     com_codigo INTEGER PRIMARY KEY,
     com_nombre VARCHAR2(20),
@@ -108,7 +111,7 @@ CREATE TABLE Plan(
     FOREIGN KEY (pro_codigo) REFERENCES Programa(pro_codigo)
 );
 
--- Creacion de Relaciones - Sin ejecutar
+-- Creacion de Relaciones
 CREATE TABLE Padece(
     pat_codigo INTEGER,
     cli_rut VARCHAR2(12),
@@ -149,7 +152,7 @@ CREATE TABLE Inscribe(
     cli_rut VARCHAR2(20),
     fecha DATE,
     PRIMARY KEY (cur_codigo, cli_rut),
-    FOREIGN KEY (cur_codigo) REFERENCES Curso(cur_codigo),
+    FOREIGN KEY (cur_codigo) REFERENCES Cursos(cur_codigo),
     FOREIGN KEY (cli_rut) REFERENCES Cliente(cli_rut)
 );
 
@@ -165,7 +168,7 @@ CREATE TABLE Se_da(
     cur_codigo INTEGER,
     ses_codigo INTEGER,
     PRIMARY KEY (cur_codigo, ses_codigo),
-    FOREIGN KEY (cur_codigo) REFERENCES Curso(cur_codigo),
+    FOREIGN KEY (cur_codigo) REFERENCES Cursos(cur_codigo),
     FOREIGN KEY (ses_codigo) REFERENCES Sesion(ses_codigo)
 );
 
@@ -194,11 +197,11 @@ CREATE TABLE Arrienda(
 );
 
 CREATE TABLE Imparte(
-    ins_codigo INTEGER,
+    ins_rut VARCHAR2(12),
     cur_codigo INTEGER,
-    PRIMARY KEY (ins_codigo, cur_codigo),
-    FOREIGN KEY (ins_codigo) REFERENCES Instructor(ins_codigo),
-    FOREIGN KEY (cur_codigo) REFERENCES Curso(cur_codigo)
+    PRIMARY KEY (ins_rut, cur_codigo),
+    FOREIGN KEY (ins_rut) REFERENCES Instructor(ins_rut),
+    FOREIGN KEY (cur_codigo) REFERENCES Cursos(cur_codigo)
 );
 
 CREATE TABLE Es_asociado(
@@ -218,10 +221,17 @@ CREATE TABLE Inscribe_dos(
     FOREIGN KEY (cli_rut) REFERENCES Cliente(cli_rut)
 );
 
--- SubCategorias (?) - Sin ejecutar
+CREATE TABLE Entrenamiento(
+    pro_codigo INTEGER Primary Key,
+    pro_tipo VARCHAR2(20),
+    esp_codigo INTEGER,
+    FOREIGN KEY (pro_codigo) REFERENCES Programa(pro_codigo),
+    FOREIGN KEY (esp_codigo) REFERENCES Especialidad(esp_codigo)
+);
+
+-- SubCategorias (?)
 CREATE TABLE Terapia(
-    pro_codigo INTEGER,
-    PRIMARY KEY (pro_codigo),
+    pro_codigo INTEGER PRIMARY KEY,
     FOREIGN KEY (pro_codigo) REFERENCES Programa(pro_codigo)
 );
 
