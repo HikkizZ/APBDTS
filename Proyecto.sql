@@ -38,7 +38,7 @@ CREATE TABLE Patologia(
     pat_descripcion VARCHAR2(30)
 );
 
-CREATE TABLE Evento( -- Sin crear
+CREATE TABLE Evento(
     eve_codigo INTEGER PRIMARY KEY,
     eve_descripcion VARCHAR2(20),
     eve_hora_inicio VARCHAR2(5), -- Formato HH:MM
@@ -100,9 +100,9 @@ CREATE TABLE Sesion(
     FOREIGN KEY (ins_rut) REFERENCES Instructor(ins_rut)
 );
 
-CREATE TABLE Plan( -- Duda con modalidad / Sin crear
+CREATE TABLE Plan(
     pla_codigo INTEGER PRIMARY KEY,
-    pla_modalidad INTEGER,
+    pla_modalidad VARCHAR2(20),
     pla_valor INTEGER,
     pro_codigo INTEGER,
     FOREIGN KEY (pro_codigo) REFERENCES Programa(pro_codigo)
