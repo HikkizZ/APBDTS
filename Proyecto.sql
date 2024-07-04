@@ -434,12 +434,22 @@ INSERT ALL
     VALUES ('56789012-3', 'Esteban', 'Dido', '915369428', 'Santa Margarita', 580000, 5)
 SELECT * FROM dual;
 
+-- Inserción de Programas
 INSERT ALL
     INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (1, 'Pilates Reformer', 20000, 60)
     INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (2, 'Yoga Inicial', 15000, 60)
     INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (3, 'Yoga Intermedio', 17000, 60)
     INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (4, 'Pilates Suelo', 18000, 60)
     INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (5, 'Aero Yoga', 16000, 60)
+SELECT * FROM dual;
+
+-- Inserción de Planes
+INSERT ALL
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (1, '2 veces a la semana', 34990, 1)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (2, '3 veces a la semana', 39990, 2)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (3, '2 veces a la semana', 29990, 3)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (4, '3 veces a la semana', 34990, 4)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (5, '2 veces a la semana', 32990, 5)
 SELECT * FROM dual;
 
 
