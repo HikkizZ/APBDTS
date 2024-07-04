@@ -260,6 +260,86 @@ INSERT INTO Region (reg_codigo, reg_nombre) VALUES (14, 'Magallanes');
 INSERT INTO Region (reg_codigo, reg_nombre) VALUES (15, 'Metropolitana');
 INSERT INTO Region (reg_codigo, reg_nombre) VALUES (16, 'Arica y Parinacota');
 
+-- Inserción de Comunas
+-- Región de Tarapacá
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (1, 'Iquique', 1);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (2, 'Alto Hospicio', 1);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (3, 'Pozo Almonte', 1);
+
+-- Región de Antofagasta
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (4, 'Antofagasta', 2);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (5, 'Mejillones', 2);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (6, 'Taltal', 2);
+
+-- Región de Atacama (3)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (7, 'Copiapó', 3);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (8, 'Caldera', 3);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (9, 'Chañaral', 3);
+
+-- Región de Coquimbo (4)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (10, 'La Serena', 4);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (11, 'Coquimbo', 4);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (12, 'Ovalle', 4);
+
+-- Región de Valparaíso (5)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (13, 'Valparaíso', 5);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (14, 'Viña del Mar', 5);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (15, 'Quilpué', 5);
+
+-- Región de O’Higgins (6)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (16, 'Rancagua', 6);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (17, 'San Fernando', 6);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (18, 'Pichilemu', 6);
+
+-- Región del Maule (7)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (19, 'Talca', 7);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (20, 'Curicó', 7);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (21, 'Linares', 7);
+
+-- Región de Ñuble (8)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (22, 'Chillán', 8);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (23, 'Bulnes', 8);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (24, 'San Carlos', 8);
+
+-- Región del Biobío (9)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (25, 'Concepción', 9);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (26, 'Talcahuano', 9);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (27, 'Los Ángeles', 9);
+
+-- Región de la Araucanía (10)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (28, 'Temuco', 10);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (29, 'Villarrica', 10);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (30, 'Pucón', 10);
+
+-- Región de Los Ríos (11)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (31, 'Valdivia', 11);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (32, 'La Unión', 11);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (33, 'Panguipulli', 11);
+
+-- Región de Los Lagos (12)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (34, 'Puerto Montt', 12);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (35, 'Castro', 12);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (36, 'Ancud', 12);
+
+-- Región de Aysén (13)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (37, 'Coyhaique', 13);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (38, 'Puerto Aysén', 13);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (39, 'Chile Chico', 13);
+
+-- Región de Magallanes (14)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (40, 'Punta Arenas', 14);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (41, 'Puerto Natales', 14);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (42, 'Porvenir', 14);
+
+-- Región Metropolitana (15)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (43, 'Santiago', 15);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (44, 'Puente Alto', 15);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (45, 'Maipú', 15);
+
+-- Región de Arica y Parinacota (16)
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (46, 'Arica', 16);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (47, 'Putre', 16);
+INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (48, 'Camarones', 16);
 
 -- Ejercicio 1
 SET SERVEROUTPUT ON;
