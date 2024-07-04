@@ -347,6 +347,14 @@ INSERT INTO Estado (est_codigo, est_descripcion) VALUES (2, 'Casado/a');
 INSERT INTO Estado (est_codigo, est_descripcion) VALUES (3, 'Divorciado/a');
 INSERT INTO Estado (est_codigo, est_descripcion) VALUES (4, 'Viudo/a');
 
+-- Inserción de Empresa
+INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (1, 'Nestle');
+INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (2, 'EA Sports');
+INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (3, 'Carozzi');
+INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (4, 'Steam');
+INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (5, 'Estudio Ghibli');
+
+
 
 -- Ejercicio 1
 SET SERVEROUTPUT ON;
