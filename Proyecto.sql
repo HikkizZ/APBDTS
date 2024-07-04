@@ -452,6 +452,14 @@ INSERT ALL
     INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (5, '2 veces a la semana', 32990, 5)
 SELECT * FROM dual;
 
+-- Insercion de Especialidades
+INSERT ALL
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (1, 'Pilates Reformer')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (2, 'Yoga Inicial')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (3, 'Yoga Intermedio')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (4, 'Pilates Suelo')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (5, 'Aero Yoga')
+SELECT * FROM dual;
 
 
 -- Ejercicio 1
