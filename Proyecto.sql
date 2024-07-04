@@ -434,6 +434,15 @@ INSERT ALL
     VALUES ('56789012-3', 'Esteban', 'Dido', '915369428', 'Santa Margarita', 580000, 5)
 SELECT * FROM dual;
 
+INSERT ALL
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (1, 'Pilates Reformer', 20000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (2, 'Yoga Inicial', 15000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (3, 'Yoga Intermedio', 17000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (4, 'Pilates Suelo', 18000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (5, 'Aero Yoga', 16000, 60)
+SELECT * FROM dual;
+
+
 
 -- Ejercicio 1
 SET SERVEROUTPUT ON;
