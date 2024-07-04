@@ -414,6 +414,12 @@ INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, 
 VALUES ('19191919-9', 'Sebastián', 'Peña', '992346789', 'Calle 19', 'Divorciado', 'sebastian.pena@example.com', 3)
 SELECT * FROM dual;
 
+-- Inserción de Profesiones
+INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (1, 'Kinesiologo');
+INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (2, 'Instructor de Yoga');
+INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (3, 'Instructor de Pilates');
+INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (4, 'Nutricionista');
+
 
 
 -- Ejercicio 1
