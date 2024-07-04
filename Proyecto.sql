@@ -461,6 +461,15 @@ INSERT ALL
     INTO Especialidad (esp_codigo, esp_nombre) VALUES (5, 'Aero Yoga')
 SELECT * FROM dual;
 
+-- Inserción de Entrenamientos
+INSERT ALL
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (1, 'Pilates', 1)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (2, 'Yoga', 2)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (3, 'Yoga', 3)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (4, 'Pilates', 4)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (5, 'Yoga', 5)
+SELECT * FROM dual;
+
 
 -- Ejercicio 1
 SET SERVEROUTPUT ON;
