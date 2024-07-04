@@ -354,6 +354,66 @@ INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (3, 'Carozzi');
 INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (4, 'Steam');
 INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (5, 'Estudio Ghibli');
 
+-- Inserción de Clientes
+INSERT ALL
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('11111111-1', 'Juan', 'Pérez', '912345678', 'Calle 1', 'Soltero', 'juan.perez@example.com', 1)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('22222222-2', 'María', 'González', '922345678', 'Calle 2', 'Casado', 'maria.gonzalez@example.com', 2)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('33333333-3', 'Pedro', 'Martínez', '932345678', 'Calle 3', 'Divorciado', 'pedro.martinez@example.com', 3)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('44444444-4', 'Ana', 'Rodríguez', '942345678', 'Calle 4', 'Viudo', 'ana.rodriguez@example.com', 4)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('55555555-5', 'Luis', 'Hernández', '952345678', 'Calle 5', 'Soltero', 'luis.hernandez@example.com', 5)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('66666666-6', 'Carmen', 'Morales', '962345678', 'Calle 6', 'Casado', 'carmen.morales@example.com', 6)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('77777777-7', 'José', 'López', '972345678', 'Calle 7', 'Divorciado', 'jose.lopez@example.com', 7)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('88888888-8', 'Laura', 'Ramírez', '982345678', 'Calle 8', 'Viudo', 'laura.ramirez@example.com', 8)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('99999999-9', 'Miguel', 'Torres', '992345678', 'Calle 9', 'Soltero', 'miguel.torres@example.com', 9)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('10101010-0', 'Isabel', 'Flores', '902345678', 'Calle 10', 'Casado', 'isabel.flores@example.com', 10)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('11111112-1', 'Francisco', 'Díaz', '912346789', 'Calle 11', 'Divorciado', 'francisco.diaz@example.com', 11)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('12121212-2', 'Elena', 'Fuentes', '922346789', 'Calle 12', 'Viudo', 'elena.fuentes@example.com', 12)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('13131313-3', 'Diego', 'Gutiérrez', '932346789', 'Calle 13', 'Soltero', 'diego.gutierrez@example.com', 13)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('14141414-4', 'Paula', 'Castro', '942346789', 'Calle 14', 'Casado', 'paula.castro@example.com', 14)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('15151515-5', 'Andrés', 'Vargas', '952346789', 'Calle 15', 'Divorciado', 'andres.vargas@example.com', 15)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('16161616-6', 'Daniela', 'Reyes', '962346789', 'Calle 16', 'Viudo', 'daniela.reyes@example.com', 16)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('17171717-7', 'Carlos', 'Ortiz', '972346789', 'Calle 17', 'Soltero', 'carlos.ortiz@example.com', 1)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('18181818-8', 'Natalia', 'Rivas', '982346789', 'Calle 18', 'Casado', 'natalia.rivas@example.com', 2)
+
+INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+VALUES ('19191919-9', 'Sebastián', 'Peña', '992346789', 'Calle 19', 'Divorciado', 'sebastian.pena@example.com', 3)
+SELECT * FROM dual;
+
 
 
 -- Ejercicio 1
