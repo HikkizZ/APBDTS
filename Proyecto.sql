@@ -242,34 +242,24 @@ CREATE TABLE Especialidad(
 
 -- Inserción de Datos
 
--- Insertar algunas regiones y comunas
-INSERT INTO Region (reg_codigo, reg_nombre) VALUES (1, 'Region Metropolitana');
-INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (101, 'Providencia', 1);
-INSERT INTO Region (reg_codigo, reg_nombre) VALUES (2, 'Region de Valparaiso');
-INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (102, 'Viña del Mar', 2);
+-- Inserción de Regiones
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (1, 'Tarapacá');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (2, 'Antofagasta');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (3, 'Atacama');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (4, 'Coquimbo');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (5, 'Valparaíso');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (6, 'O’Higgins');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (7, 'Maule');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (8, 'Ñuble');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (9, 'Biobío');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (10, 'Araucanía');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (11, 'Los Ríos');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (12, 'Los Lagos');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (13, 'Aysén');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (14, 'Magallanes');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (15, 'Metropolitana');
+INSERT INTO Region (reg_codigo, reg_nombre) VALUES (16, 'Arica y Parinacota');
 
--- Insertar algunos clientes
-INSERT INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo) VALUES ('12345678-9', 'Juan', 'Pérez', '12345678', 'Calle Falsa 123', 'Soltero', 'juan.perez@example.com', 101);
-INSERT INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo) VALUES ('23456789-0', 'Ana', 'Gomez', '98765432', 'Avenida Xd 742', 'Casado', 'ana.gomez@example.com', 102);
-
--- Insertar estado para clientes
-INSERT INTO Estado (est_codigo, est_descripcion) VALUES (1, 'Vigente');
-INSERT INTO Estado (est_codigo, est_descripcion) VALUES (2, 'No Vigente');
-
-INSERT INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut) VALUES (1, TO_DATE('2023-01-01', 'YYYY-MM-DD'), TO_DATE('2024-01-01', 'YYYY-MM-DD'), '12345678-9');
-INSERT INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut) VALUES (1, TO_DATE('2022-01-01', 'YYYY-MM-DD'), TO_DATE('2023-01-01', 'YYYY-MM-DD'), '23456789-0');
-
--- Insertar programas y planes
-INSERT INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (1, 'Pilates Reformer', 15000, 60);
-INSERT INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (2, 'Yoga', 10000, 45);
-
-INSERT INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (1, '3 veces a la semana', 40000, 1);
-INSERT INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (2, '2 veces a la semana', 30000, 2);
-
-
--- Insertar contratación de un plan
-INSERT INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (1, '12345678-9', TO_DATE('2023-06-01', 'YYYY-MM-DD'));
-INSERT INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (2, '23456789-0', TO_DATE('2024-02-01', 'YYYY-MM-DD'));
 
 -- Ejercicio 1
 SET SERVEROUTPUT ON;
