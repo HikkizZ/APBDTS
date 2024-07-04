@@ -420,6 +420,19 @@ INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (2, 'Instructor de Yoga'
 INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (3, 'Instructor de Pilates');
 INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (4, 'Nutricionista');
 
+-- Inserción de Instructores
+INSERT ALL
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+    VALUES ('12345678-9', 'Aquiles', 'Brinco', '968574235', 'Av Sebastian Piñera', 500000, 1)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+    VALUES ('23456789-0', 'Mary', 'Conazo', '995243698', 'Av Siempre Viva 12', 600000, 2)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+    VALUES ('34567890-1', 'Elva', 'Gina', '912654869', 'Fondo de Bikini', 550000, 3)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+    VALUES ('45678901-2', 'Elvis', 'Tek', '965874215', 'Calle 48', 520000, 4)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+    VALUES ('56789012-3', 'Esteban', 'Dido', '915369428', 'Santa Margarita', 580000, 5)
+SELECT * FROM dual;
 
 
 -- Ejercicio 1
