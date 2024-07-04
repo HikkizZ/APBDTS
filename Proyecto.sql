@@ -341,11 +341,9 @@ INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (46, 'Arica', 16)
 INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (47, 'Putre', 16);
 INSERT INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (48, 'Camarones', 16);
 
--- Inserción de Estados Civiles
-INSERT INTO Estado (est_codigo, est_descripcion) VALUES (1, 'Soltero/a');
-INSERT INTO Estado (est_codigo, est_descripcion) VALUES (2, 'Casado/a');
-INSERT INTO Estado (est_codigo, est_descripcion) VALUES (3, 'Divorciado/a');
-INSERT INTO Estado (est_codigo, est_descripcion) VALUES (4, 'Viudo/a');
+-- Inserción de Estados
+INSERT INTO Estado (est_codigo, est_descripcion) VALUES (1, 'Habilitado');
+INSERT INTO Estado (est_codigo, est_descripcion) VALUES (2, 'No habilitado');
 
 -- Inserción de Empresa
 INSERT INTO Empresa (emp_codigo, emp_descripcion) VALUES (1, 'Nestle');
