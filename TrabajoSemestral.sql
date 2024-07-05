@@ -238,4 +238,165 @@ CREATE TABLE Especialidad(
 );
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
+-- Inserción de Datos
 
+-- Inserción de Regiones
+INSERT ALL
+    INTO Region (reg_codigo, reg_nombre) VALUES (1, 'Tarapaca')
+    INTO Region (reg_codigo, reg_nombre) VALUES (2, 'Antofagasta')
+    INTO Region (reg_codigo, reg_nombre) VALUES (3, 'Atacama')
+    INTO Region (reg_codigo, reg_nombre) VALUES (4, 'Coquimbo')
+    INTO Region (reg_codigo, reg_nombre) VALUES (5, 'Valparaiso')
+    INTO Region (reg_codigo, reg_nombre) VALUES (6, 'OHiggins')
+    INTO Region (reg_codigo, reg_nombre) VALUES (7, 'Maule')
+    INTO Region (reg_codigo, reg_nombre) VALUES (8, 'Ñuble')
+    INTO Region (reg_codigo, reg_nombre) VALUES (9, 'Biobio')
+    INTO Region (reg_codigo, reg_nombre) VALUES (10, 'Araucania')
+    INTO Region (reg_codigo, reg_nombre) VALUES (11, 'Los Rios')
+    INTO Region (reg_codigo, reg_nombre) VALUES (12, 'Los Lagos')
+    INTO Region (reg_codigo, reg_nombre) VALUES (13, 'Aysen')
+    INTO Region (reg_codigo, reg_nombre) VALUES (14, 'Magallanes')
+    INTO Region (reg_codigo, reg_nombre) VALUES (15, 'Metropolitana')
+    INTO Region (reg_codigo, reg_nombre) VALUES (16, 'Arica y Parinacota')
+SELECT * FROM dual;
+
+-- Inserción de Comunas
+INSERT ALL
+    -- Región de Tarapacá
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (1, 'Iquique', 1)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (2, 'Alto Hospicio', 1)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (3, 'Pozo Almonte', 1)
+    -- Región de Antofagasta
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (4, 'Antofagasta', 2)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (5, 'Mejillones', 2)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (6, 'Taltal', 2)
+    -- Región de Atacama
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (7, 'Copiapo', 3)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (8, 'Caldera', 3)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (9, 'Chañaral', 3)
+    -- Región de Coquimbo
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (10, 'La Serena', 4)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (11, 'Coquimbo', 4)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (12, 'Ovalle', 4)
+    -- Región de Valparaíso
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (13, 'Valparaiso', 5)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (14, 'Viña del Mar', 5)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (15, 'Quilpue', 5)
+    -- Región de O’Higgins
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (16, 'Rancagua', 6)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (17, 'San Fernando', 6)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (18, 'Pichilemu', 6)
+    -- Región del Maule
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (19, 'Talca', 7)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (20, 'Curico', 7)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (21, 'Linares', 7)
+    -- Región de Ñuble
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (22, 'Chillan', 8)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (23, 'Bulnes', 8)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (24, 'San Carlos', 8)
+    -- Región del Biobío
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (25, 'Concepcion', 9)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (26, 'Talcahuano', 9)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (27, 'Los Angeles', 9)
+    -- Región de la Araucanía
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (28, 'Temuco', 10)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (29, 'Villarrica', 10)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (30, 'Pucon', 10)
+    -- Región de Los Ríos
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (31, 'Valdivia', 11)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (32, 'La Union', 11)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (33, 'Panguipulli', 11)
+    -- Región de Los Lagos
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (34, 'Puerto Montt', 12)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (35, 'Castro', 12)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (36, 'Ancud', 12)
+    -- Región de Aysén
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (37, 'Coyhaique', 13)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (38, 'Puerto Aysen', 13)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (39, 'Chile Chico', 13)
+    -- Región de Magallanes
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (40, 'Punta Arenas', 14)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (41, 'Puerto Natales', 14)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (42, 'Porvenir', 14)
+    -- Región Metropolitana
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (43, 'Santiago', 15)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (44, 'Puente Alto', 15)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (45, 'Maipu', 15)
+    -- Región de Arica y Parinacota
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (46, 'Arica', 16)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (47, 'Putre', 16)
+    INTO Comuna (com_codigo, com_nombre, reg_codigo) VALUES (48, 'Camarones', 16)
+SELECT * FROM dual;
+
+-- Inserción de Estados
+INSERT INTO Estado (est_codigo, est_descripcion) VALUES (1, 'Habilitado');
+INSERT INTO Estado (est_codigo, est_descripcion) VALUES (2, 'No habilitado');
+
+-- Inserción de Empresa
+INSERT ALL
+    INTO Empresa (emp_codigo, emp_descripcion) VALUES (1, 'Nestle')
+    INTO Empresa (emp_codigo, emp_descripcion) VALUES (2, 'EA Sports')
+    INTO Empresa (emp_codigo, emp_descripcion) VALUES (3, 'Ripley')
+    INTO Empresa (emp_codigo, emp_descripcion) VALUES (4, 'Steam')
+    INTO Empresa (emp_codigo, emp_descripcion) VALUES (5, 'Estudio Ghibli')
+SELECT * FROM dual;
+
+-- Inserción de Clientes
+INSERT ALL
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('11111111-1', 'Juan', 'Pérez', '912345678', 'Calle 1', 'Soltero', 'juan.perez@example.com', 25)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('22222222-2', 'María', 'González', '922345678', 'Calle 2', 'Casado', 'maria.gonzalez@example.com', 2)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('33333333-3', 'Pedro', 'Martínez', '932345678', 'Calle 3', 'Divorciado', 'pedro.martinez@example.com', 25)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('44444444-4', 'Ana', 'Rodríguez', '942345678', 'Calle 4', 'Viudo', 'ana.rodriguez@example.com', 4)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('55555555-5', 'Luis', 'Hernández', '952345678', 'Calle 5', 'Soltero', 'luis.hernandez@example.com', 5)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('66666666-6', 'Carmen', 'Morales', '962345678', 'Calle 6', 'Casado', 'carmen.morales@example.com', 25)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('77777777-7', 'José', 'López', '972345678', 'Calle 7', 'Divorciado', 'jose.lopez@example.com', 7)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('88888888-8', 'Laura', 'Ramírez', '982345678', 'Calle 8', 'Viudo', 'laura.ramirez@example.com', 25)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('99999999-9', 'Miguel', 'Torres', '992345678', 'Calle 9', 'Soltero', 'miguel.torres@example.com', 25)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('10101010-0', 'Isabel', 'Flores', '902345678', 'Calle 10', 'Casado', 'isabel.flores@example.com', 10)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('11111112-1', 'Francisco', 'Díaz', '912346789', 'Calle 11', 'Divorciado', 'francisco.diaz@example.com', 27)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('12121212-2', 'Elena', 'Fuentes', '922346789', 'Calle 12', 'Viudo', 'elena.fuentes@example.com', 27)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('13131313-3', 'Diego', 'Gutiérrez', '932346789', 'Calle 13', 'Soltero', 'diego.gutierrez@example.com', 27)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('14141414-4', 'Paula', 'Castro', '942346789', 'Calle 14', 'Casado', 'paula.castro@example.com', 14)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('15151515-5', 'Andrés', 'Vargas', '952346789', 'Calle 15', 'Divorciado', 'andres.vargas@example.com', 43)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('16161616-6', 'Daniela', 'Reyes', '962346789', 'Calle 16', 'Viudo', 'daniela.reyes@example.com', 16)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('17171717-7', 'Carlos', 'Ortiz', '972346789', 'Calle 17', 'Soltero', 'carlos.ortiz@example.com', 43)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('18181818-8', 'Natalia', 'Rivas', '982346789', 'Calle 18', 'Casado', 'natalia.rivas@example.com', 2)
+
+    INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
+        VALUES ('19191919-9', 'Sebastián', 'Peña', '992346789', 'Calle 19', 'Divorciado', 'sebastian.pena@example.com', 43)
+SELECT * FROM dual;
