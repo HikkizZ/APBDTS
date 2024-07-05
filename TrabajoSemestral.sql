@@ -220,7 +220,7 @@ CREATE TABLE Inscribe_dos(
 
 CREATE TABLE Entrenamiento(
     pro_codigo INTEGER Primary Key,
-    pro_tipo VARCHAR2(20),
+    pro_tipo VARCHAR2(35),
     esp_codigo INTEGER,
     FOREIGN KEY (pro_codigo) REFERENCES Programa(pro_codigo),
     FOREIGN KEY (esp_codigo) REFERENCES Especialidad(esp_codigo)
@@ -427,4 +427,60 @@ INSERT ALL
         VALUES ('20393210-3', 'Juan', 'Yanez', '985908558', 'Av Venga la Paz', 650000, 6)
     INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
         VALUES ('19385987-1', 'Sophia', 'Ibanez', '983569875', 'Av San Martin', 480000, 5)
+SELECT * FROM dual;
+
+-- Inserción de Programas
+INSERT ALL
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (1, 'Yoga para principiantes', 17000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (2, 'Pilates Intermedio', 18000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (3, 'Yoga Intermedio', 18500, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (4, 'Kinesiologia aplicada al pilates', 18000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (5, 'Aero Yoga', 16000, 50)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (6, 'Pilates Reformer', 20000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (7, 'Pilates con Maquinas', 15000, 50)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (8, 'Yoga Avanzado', 19000, 75)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (9, 'Pilates prenatal', 18000, 60)
+    INTO Programa (pro_codigo, pro_descripcion, pro_valor_sesion, pro_duracion) VALUES (10, 'Yoga restaurativo', 16000, 60)
+SELECT * FROM dual;
+
+-- Inserción de Planes
+INSERT ALL
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (1, '2 veces a la semana', 31990, 1)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (2, '3 veces a la semana', 49990, 2)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (3, '2 veces a la semana', 35990, 3)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (4, '3 veces a la semana', 51990, 4)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (5, '4 veces a la semana', 59990, 5)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (6, '3 veces a la semana', 59990, 6)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (7, '3 veces a la semana', 42990, 7)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (8, '2 veces a la semana', 34990, 8)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (9, '2 veces a la semana', 29990, 9)
+    INTO Plan (pla_codigo, pla_modalidad, pla_valor, pro_codigo) VALUES (10, '4 veces a la semana', 59990, 10)
+SELECT * FROM dual;
+
+-- Insercion de Especialidades
+INSERT ALL
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (1, 'Yoga Inicial')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (2, 'Pilates Reformer')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (3, 'Yoga Amateur')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (4, 'Kinesiologia Pilates')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (5, 'Aero Yoga')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (6, 'Pilates Reformer')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (7, 'Pilates con Maquinas')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (8, 'Yoga Avanzado')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (9, 'Pilates Prenatal')
+    INTO Especialidad (esp_codigo, esp_nombre) VALUES (10, 'Yoga Restaurativo')
+SELECT * FROM dual;
+
+-- Inserción de Entrenamientos
+INSERT ALL
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (1, 'Yoga', 1)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (2, 'Pilates', 2)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (3, 'Yoga', 3)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (4, 'Pilates', 4)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (5, 'Yoga', 5)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (6, 'Pilates', 6)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (7, 'Pilates', 7)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (8, 'Yoga', 8)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (9, 'Pilates', 9)
+    INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (10, 'Yoga', 10)
 SELECT * FROM dual;
