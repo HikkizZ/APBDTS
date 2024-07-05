@@ -613,3 +613,4 @@ INSERT ALL
         VALUES (32, 'Sesión de Yoga Avanzado 8', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
 SELECT * FROM dual;
 
+
