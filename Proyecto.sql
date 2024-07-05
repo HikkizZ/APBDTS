@@ -421,15 +421,15 @@ INSERT INTO Profesion (prof_codigo, prof_nombre) VALUES (4, 'Nutricionista');
 -- Inserción de Instructores
 INSERT ALL
     INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
-    VALUES ('12345678-9', 'Aquiles', 'Brinco', '968574235', 'Av Sebastian Piñera', 500000, 1)
+        VALUES ('12345678-9', 'Aquiles', 'Brinco', '968574235', 'Av Sebastian Piñera', 500000, 1)
     INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
-    VALUES ('23456789-0', 'Mary', 'Conazo', '995243698', 'Av Siempre Viva 12', 600000, 2)
+        VALUES ('23456789-0', 'Mary', 'Conazo', '995243698', 'Av Siempre Viva 12', 600000, 2)
     INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
-    VALUES ('34567890-1', 'Elva', 'Gina', '912654869', 'Fondo de Bikini', 550000, 3)
+        VALUES ('34567890-1', 'Elva', 'Gina', '912654869', 'Fondo de Bikini', 550000, 3)
     INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
-    VALUES ('45678901-2', 'Elvis', 'Tek', '965874215', 'Calle 48', 520000, 4)
+        VALUES ('45678901-2', 'Elvis', 'Tek', '965874215', 'Calle 48', 520000, 4)
     INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
-    VALUES ('56789012-3', 'Esteban', 'Dido', '915369428', 'Santa Margarita', 580000, 5)
+        VALUES ('56789012-3', 'Esteban', 'Dido', '915369428', 'Santa Margarita', 580000, 2)
 SELECT * FROM dual;
 
 -- Inserción de Programas
@@ -467,6 +467,39 @@ INSERT ALL
     INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (4, 'Pilates', 4)
     INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (5, 'Yoga', 5)
 SELECT * FROM dual;
+
+-- Inserción de Sesiones
+INSERT ALL
+    -- Lunes
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (1, 'Pilates Reformer Clase 1', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '10:00', 1, '44444444-4')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (2, 'Yoga Inicial Clase 1', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '12:00', 2, '55555555-5')
+
+    -- Martes
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (3, 'Yoga Intermedio Clase 1', TO_DATE('2024-07-09', 'YYYY-MM-DD'), '10:00', 1, '66666666-6')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (4, 'Pilates Suelo Clase 1', TO_DATE('2024-07-09', 'YYYY-MM-DD'), '12:00', 2, '77777777-7')
+
+    -- Miércoles
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (5, 'Aero Yoga Clase 1', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '10:00', 1, '88888888-8')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (6, 'Pilates Reformer Clase 2', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '12:00', 2, '44444444-4')
+
+    -- Jueves
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (7, 'Yoga Inicial Clase 2', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '10:00', 1, '55555555-5')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (8, 'Yoga Intermedio Clase 2', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '12:00', 2, '66666666-6')
+
+    -- Viernes
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (9, 'Pilates Suelo Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '10:00', 1, '77777777-7')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+        VALUES (10, 'Aero Yoga Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '12:00', 2, '88888888-8')
+
 
 
 -- Ejercicio 1
