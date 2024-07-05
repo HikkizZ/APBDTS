@@ -400,3 +400,31 @@ INSERT ALL
     INTO Cliente (cli_rut, cli_nombres, cli_apellidos, cli_telefono, cli_direccion, cli_estado_civil, cli_correo_electronico, com_codigo)
         VALUES ('19191919-9', 'Sebastián', 'Peña', '992346789', 'Calle 19', 'Divorciado', 'sebastian.pena@example.com', 43)
 SELECT * FROM dual;
+
+-- Inserción de Profesiones
+INSERT ALL
+    INTO Profesion (prof_codigo, prof_nombre) VALUES (1, 'Kinesiologo')
+    INTO Profesion (prof_codigo, prof_nombre) VALUES (2, 'Instructor de Yoga')
+    INTO Profesion (prof_codigo, prof_nombre) VALUES (3, 'Instructor de Pilates')
+    INTO Profesion (prof_codigo, prof_nombre) VALUES (4, 'Nutricionista')
+    INTO Profesion (prof_codigo, prof_nombre) VALUES (5, 'Psicologo')
+    INTO Profesion (prof_codigo, prof_nombre) VALUES (6, 'Instructor de Zumba')
+SELECT * FROM dual;
+
+-- Inserción de Instructores
+INSERT ALL
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+        VALUES ('12345678-9', 'Aquiles', 'Brinco', '968574235', 'Av Sebastian Piñera', 500000, 1)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+        VALUES ('23456789-0', 'Mary', 'Conazo', '995243698', 'Av Siempre Viva 12', 600000, 2)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+        VALUES ('34567890-1', 'Elva', 'Gina', '912654869', 'Fondo de Bikini', 550000, 3)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+        VALUES ('45678901-2', 'Elvis', 'Tek', '965874215', 'Calle 48', 520000, 4)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+        VALUES ('56789012-3', 'Esteban', 'Dido', '915369428', 'Santa Margarita', 580000, 2)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+        VALUES ('20393210-3', 'Juan', 'Yanez', '985908558', 'Av Venga la Paz', 650000, 6)
+    INTO Instructor (ins_rut, ins_nombres, ins_apellidos, ins_telefono, ins_direccion, ins_sueldo_base, prof_codigo)
+        VALUES ('19385987-1', 'Sophia', 'Ibanez', '983569875', 'Av San Martin', 480000, 5)
+SELECT * FROM dual;
