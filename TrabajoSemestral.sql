@@ -499,20 +499,117 @@ SELECT * FROM dual;
 INSERT ALL
     INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
         VALUES (1, 'Clase de Zumba', '13:00', '15:00', 50000, 'Efectivo', TO_DATE('2024-07-01', 'YYYY-MM-DD'), '22222222-2')
-
     INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
         VALUES (2, 'Fiesta de cumpleaños', '10:00', '00:00', 80000, 'Tarjeta', TO_DATE('2024-07-19', 'YYYY-MM-DD'), '44444444-4')
-
     INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
         VALUES (3, 'Seminario de Nutrición', '14:00', '16:00', 50000, 'Transferencia', TO_DATE('2024-07-02', 'YYYY-MM-DD'), '18181818-8')
-
     INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
         VALUES (4, 'Clase de Danza Moderna', '17:00', '18:00', 30000, 'Efectivo', TO_DATE('2024-06-21', 'YYYY-MM-DD'), '14141414-4')
-
     INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
         VALUES (5, 'Taller de Resiliencia', '11:00', '13:00', 65000, 'Tarjeta', TO_DATE('2024-07-04', 'YYYY-MM-DD'), '11111112-1')
-
     INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
         VALUES (6, 'Workshop de Fitness', '10:00', '12:00', 40000, 'Transferencia', TO_DATE('2023-12-12', 'YYYY-MM-DD'), '99999999-9')
+SELECT * FROM dual;
+
+-- Inserción de Cursos
+INSERT ALL
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (1, 'Curso de Yoga Avanzado', 69990, 60, 8, TO_DATE('2024-07-01', 'YYYY-MM-DD'), TO_DATE('2024-07-12', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (2, 'Curso de Pilates Suelo', 49990, 60, 6, TO_DATE('2024-01-15', 'YYYY-MM-DD'), TO_DATE('2024-01-26', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (3, 'Curso de Meditación', 65990, 45, 9, TO_DATE('2023-12-12', 'YYYY-MM-DD'), TO_DATE('2023-12-29', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (4, 'Curso de Danza', 54990, 60, 6, TO_DATE('2024-03-04', 'YYYY-MM-DD'), TO_DATE('2024-03-21', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (5, 'Curso de Nutrición y Bienestar', 24990, 90, 3, TO_DATE('2023-09-06', 'YYYY-MM-DD'), TO_DATE('2023-09-20', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+-- Inserción de Salones
+INSERT ALL
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (1, 'Salón 101AA', 30)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (2, 'Salón 102AA', 25)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (3, 'Salón 202AB', 20)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (4, 'Salón 201D', 35)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (5, 'Salón 202D', 40)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (6, 'Salón 102AC', 15)
+SELECT * FROM dual;
+
+-- Inserción de Sesiones
+INSERT ALL
+-- Lunes
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (13, 'Sesión de Pilates Suelo 1', TO_DATE('2024-01-15', 'YYYY-MM-DD'), '10:00', 2, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (16, 'Sesión de Pilates Suelo 4', TO_DATE('2024-01-22', 'YYYY-MM-DD'), '10:00', 2, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (19, 'Sesión de Danza 1', TO_DATE('2024-03-04', 'YYYY-MM-DD'), '17:00', 4, '20393210-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (21, 'Sesión de Danza 3', TO_DATE('2024-03-11', 'YYYY-MM-DD'), '17:00', 4, '20393210-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (23, 'Sesión de Danza 5', TO_DATE('2024-03-18', 'YYYY-MM-DD'), '17:00', 4, '20393210-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (25, 'Sesión de Yoga Avanzado 1', TO_DATE('2024-07-01', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (29, 'Sesión de Yoga Avanzado 5', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '09:00', 1, '56789012-3')
+-- Martes
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (4, 'Sesión de Meditación 1', TO_DATE('2023-12-12', 'YYYY-MM-DD'), '10:30', 3, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (7, 'Sesión de Meditación 4', TO_DATE('2023-12-19', 'YYYY-MM-DD'), '10:30', 3, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (10, 'Sesión de Meditación 7', TO_DATE('2023-12-26', 'YYYY-MM-DD'), '10:30', 3, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (26, 'Sesión de Yoga Avanzado 2', TO_DATE('2024-07-02', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (30, 'Sesión de Yoga Avanzado 6', TO_DATE('2024-07-09', 'YYYY-MM-DD'), '09:00', 1, '56789012-3')
+-- Miercoles
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (1, 'Sesión de Nutrición y Bienestar 1', TO_DATE('2023-09-06', 'YYYY-MM-DD'), '11:00', 5, '45678901-2')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (2, 'Sesión de Nutrición y Bienestar 2', TO_DATE('2023-09-13', 'YYYY-MM-DD'), '11:00', 5, '45678901-2')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (3, 'Sesión de Nutrición y Bienestar 3', TO_DATE('2023-09-20', 'YYYY-MM-DD'), '11:00', 5, '45678901-2')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (5, 'Sesión de Meditación 2', TO_DATE('2023-12-13', 'YYYY-MM-DD'), '09:00', 3, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (8, 'Sesión de Meditación 5', TO_DATE('2023-12-20', 'YYYY-MM-DD'), '09:00', 3, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (11, 'Sesión de Meditación 8', TO_DATE('2023-12-27', 'YYYY-MM-DD'), '09:00', 3, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (14, 'Sesión de Pilates Suelo 2', TO_DATE('2024-01-17', 'YYYY-MM-DD'), '11:00', 2, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (17, 'Sesión de Pilates Suelo 5', TO_DATE('2024-01-24', 'YYYY-MM-DD'), '11:00', 2, '34567890-1')
+
+-- Jueves
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (27, 'Sesión de Yoga Avanzado 3', TO_DATE('2024-07-04', 'YYYY-MM-DD'), '10:00', 1, '23456789-0')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (31, 'Sesión de Yoga Avanzado 7', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '10:00', 1, '56789012-3')
+-- Viernes
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (6, 'Sesión de Meditación 3', TO_DATE('2023-12-15', 'YYYY-MM-DD'), '09:00', 3, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (9, 'Sesión de Meditación 6', TO_DATE('2023-12-22', 'YYYY-MM-DD'), '09:00', 3, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (12, 'Sesión de Meditación 9', TO_DATE('2023-12-29', 'YYYY-MM-DD'), '08:00', 3, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (15, 'Sesión de Pilates Suelo 3', TO_DATE('2024-01-19', 'YYYY-MM-DD'), '10:00', 2, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (18, 'Sesión de Pilates Suelo 6', TO_DATE('2024-01-26', 'YYYY-MM-DD'), '10:00', 2, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (20, 'Sesión de Danza 2', TO_DATE('2024-03-08', 'YYYY-MM-DD'), '17:00', 4, '20393210-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (22, 'Sesión de Danza 4', TO_DATE('2024-03-15', 'YYYY-MM-DD'), '17:00', 4, '20393210-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (24, 'Sesión de Danza 6', TO_DATE('2024-03-22', 'YYYY-MM-DD'), '17:00', 4, '20393210-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (28, 'Sesión de Yoga Avanzado 4', TO_DATE('2024-07-05', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (32, 'Sesión de Yoga Avanzado 8', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
 SELECT * FROM dual;
 
