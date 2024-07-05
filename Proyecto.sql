@@ -68,6 +68,9 @@ CREATE TABLE Cursos(
     cur_fecha_termino DATE
 );
 
+-- Se cambia longitud de descripción de cursos 05-07-2024
+ALTER TABLE Cursos MODIFY (cur_descripcion VARCHAR2(35));
+
 CREATE TABLE Instructor(
     ins_rut VARCHAR2(12) PRIMARY KEY,
     ins_nombres VARCHAR2(25),
@@ -538,6 +541,24 @@ INSERT ALL
         VALUES (9, 'Pilates Suelo Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '10:00', 1, '34567890-1')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
         VALUES (10, 'Aero Yoga Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '12:00', 2, '12345678-9')
+SELECT * FROM dual;
+
+-- Inserción de Cursos
+INSERT ALL
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (1, 'Curso de Yoga Avanzado', 24990, 60, 8, TO_DATE('2024-07-01', 'YYYY-MM-DD'), TO_DATE('2024-07-12', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (2, 'Curso de Pilates Suelo', 23990, 60, 6, TO_DATE('2024-01-15', 'YYYY-MM-DD'), TO_DATE('2024-01-26', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (3, 'Curso de Meditación', 35990, 45, 9, TO_DATE('2023-12-11', 'YYYY-MM-DD'), TO_DATE('2023-12-22', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (4, 'Curso de Danza', 23990, 60, 6, TO_DATE('2024-03-04', 'YYYY-MM-DD'), TO_DATE('2023-03-21', 'YYYY-MM-DD'))
+
+    INTO Cursos (cur_codigo, cur_descripcion, cur_valor_sesion, cur_duracion, cur_num_sesiones, cur_fecha_inicio, cur_fecha_termino) 
+        VALUES (5, 'Curso de Nutrición y Bienestar', 14990, 90, 3, TO_DATE('2023-09-06', 'YYYY-MM-DD'), TO_DATE('2023-09-20', 'YYYY-MM-DD'))
 SELECT * FROM dual;
 
 
