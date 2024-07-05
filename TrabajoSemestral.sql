@@ -484,3 +484,14 @@ INSERT ALL
     INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (9, 'Pilates', 9)
     INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (10, 'Yoga', 10)
 SELECT * FROM dual;
+
+-- Inserción de Patologías
+INSERT ALL
+    INTO Patologia (pat_codigo, pat_descripcion) VALUES (1, 'Diabetes')
+    INTO Patologia (pat_codigo, pat_descripcion) VALUES (2, 'Hipertensión')
+    INTO Patologia (pat_codigo, pat_descripcion) VALUES (3, 'Asma')
+    INTO Patologia (pat_codigo, pat_descripcion) VALUES (4, 'Autismo')
+    INTO Patologia (pat_codigo, pat_descripcion) VALUES (5, 'Artritis')
+    INTO Patologia (pat_codigo, pat_descripcion) VALUES (6, 'Cáncer')
+SELECT * FROM dual;
+
