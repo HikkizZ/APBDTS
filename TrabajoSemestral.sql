@@ -694,3 +694,16 @@ INSERT ALL
         VALUES (2, TO_DATE('2024-06-14', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '19191919-9')       
 SELECT * FROM dual;
 
+-- Inserciones en la tabla Contrata
+INSERT ALL
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (4, '22222222-2', TO_DATE('2024-07-01', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (6, '55555555-5', TO_DATE('2024-06-12', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (1, '14141414-4', TO_DATE('2024-01-15', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (7, '33333333-3', TO_DATE('2024-03-12', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (4, '11111112-1', TO_DATE('2023-12-04', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (9, '18181818-8', TO_DATE('2024-04-09', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (2, '15151515-5', TO_DATE('2024-02-14', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (10, '16161616-6', TO_DATE('2024-06-17', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (6, '19191919-9', TO_DATE('2023-11-15', 'YYYY-MM-DD'))
+    INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (1, '17171717-7', TO_DATE('2023-12-20', 'YYYY-MM-DD'))
+SELECT * FROM dual;
