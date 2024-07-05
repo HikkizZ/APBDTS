@@ -495,3 +495,24 @@ INSERT ALL
     INTO Patologia (pat_codigo, pat_descripcion) VALUES (6, 'Cáncer')
 SELECT * FROM dual;
 
+-- Inserción de Eventos
+INSERT ALL
+    INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
+        VALUES (1, 'Clase de Zumba', '13:00', '15:00', 50000, 'Efectivo', TO_DATE('2024-07-01', 'YYYY-MM-DD'), '22222222-2')
+
+    INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
+        VALUES (2, 'Fiesta de cumpleaños', '10:00', '00:00', 80000, 'Tarjeta', TO_DATE('2024-07-19', 'YYYY-MM-DD'), '44444444-4')
+
+    INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
+        VALUES (3, 'Seminario de Nutrición', '14:00', '16:00', 50000, 'Transferencia', TO_DATE('2024-07-02', 'YYYY-MM-DD'), '18181818-8')
+
+    INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
+        VALUES (4, 'Clase de Danza Moderna', '17:00', '18:00', 30000, 'Efectivo', TO_DATE('2024-06-21', 'YYYY-MM-DD'), '14141414-4')
+
+    INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
+        VALUES (5, 'Taller de Resiliencia', '11:00', '13:00', 65000, 'Tarjeta', TO_DATE('2024-07-04', 'YYYY-MM-DD'), '11111112-1')
+
+    INTO Evento (eve_codigo, eve_descripcion, eve_hora_inicio, eve_hora_fin, eve_valor_arriendo, eve_modalidad_pago, eve_fecha_pago, cli_rut) 
+        VALUES (6, 'Workshop de Fitness', '10:00', '12:00', 40000, 'Transferencia', TO_DATE('2023-12-12', 'YYYY-MM-DD'), '99999999-9')
+SELECT * FROM dual;
+
