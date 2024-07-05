@@ -633,8 +633,28 @@ INSERT ALL
     INTO Padece (pat_codigo, cli_rut) VALUES (2, '18181818-8') -- Cliente padece Hipertensión
 SELECT * FROM dual;
 
-
-
+-- Inserción Relación Padece (Cliente - Empresa)
+INSERT ALL
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '11111111-1') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '22222222-2') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '33333333-3') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '44444444-4') -- Cliente trabaja en Steam
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (5, '55555555-5') -- Cliente trabaja en Estudio Ghibli
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '66666666-6') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '77777777-7') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '88888888-8') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '99999999-9') -- Cliente trabaja en Steam
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (5, '10101010-0') -- Cliente trabaja en Estudio Ghibli
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '11111112-1') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '12121212-2') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '13131313-3') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '14141414-4') -- Cliente trabaja en Steam
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (5, '15151515-5') -- Cliente trabaja en Estudio Ghibli
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '16161616-6') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '17171717-7') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '18181818-8') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '19191919-9') -- Cliente trabaja en Steam
+SELECT * FROM dual;
 
 
 
