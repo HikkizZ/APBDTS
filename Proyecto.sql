@@ -468,59 +468,40 @@ INSERT ALL
     INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (5, 'Yoga', 5)
 SELECT * FROM dual;
 
+-- Inserción de Salones
+
+
 -- Inserción de Sesiones
 INSERT ALL
     -- Lunes
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (1, 'Pilates Reformer Clase 1', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '10:00', 1, '44444444-4')
+        VALUES (1, 'Pilates Reformer Clase 1', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '10:00', 1, '34567890-1')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (2, 'Yoga Inicial Clase 1', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '12:00', 2, '55555555-5')
+        VALUES (2, 'Yoga Inicial Clase 1', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '12:00', 2, '56789012-3')
 
     -- Martes
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (3, 'Yoga Intermedio Clase 1', TO_DATE('2024-07-09', 'YYYY-MM-DD'), '10:00', 1, '66666666-6')
+        VALUES (3, 'Yoga Intermedio Clase 1', TO_DATE('2024-07-09', 'YYYY-MM-DD'), '10:00', 1, '56789012-3')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (4, 'Pilates Suelo Clase 1', TO_DATE('2024-07-09', 'YYYY-MM-DD'), '12:00', 2, '77777777-7')
+        VALUES (4, 'Pilates Suelo Clase 1', TO_DATE('2024-07-09', 'YYYY-MM-DD'), '12:00', 2, '34567890-1')
 
     -- Miércoles
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (5, 'Aero Yoga Clase 1', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '10:00', 1, '88888888-8')
+        VALUES (5, 'Aero Yoga Clase 1', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '10:00', 1, '23456789-0')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (6, 'Pilates Reformer Clase 2', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '12:00', 2, '44444444-4')
+        VALUES (6, 'Pilates Reformer Clase 2', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '12:00', 2, '34567890-1')
 
     -- Jueves
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (7, 'Yoga Inicial Clase 2', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '10:00', 1, '55555555-5')
+        VALUES (7, 'Yoga Inicial Clase 2', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '10:00', 1, '23456789-0')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (8, 'Yoga Intermedio Clase 2', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '12:00', 2, '66666666-6')
+        VALUES (8, 'Yoga Intermedio Clase 2', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '12:00', 2, '23456789-0')
 
     -- Viernes
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (9, 'Pilates Suelo Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '10:00', 1, '77777777-7')
+        VALUES (9, 'Pilates Suelo Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '10:00', 1, '34567890-1')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
-        VALUES (10, 'Aero Yoga Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '12:00', 2, '88888888-8')
+        VALUES (10, 'Aero Yoga Clase 2', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '12:00', 2, '12345678-9')
+SELECT * FROM dual;
 
-
-
--- Ejercicio 1
-SET SERVEROUTPUT ON;
-
-DECLARE
-  CURSOR cur_comunas IS
-    SELECT c.com_nombre, COUNT(*) AS num_clientes
-    FROM Cliente cli
-    JOIN Comuna c ON cli.com_codigo = c.com_codigo
-    JOIN Posee pose ON cli.cli_rut = pose.cli_rut AND pose.est_codigo = 1 AND pose.fecha_termino >= SYSDATE -- estado vigente
-    JOIN Contrata contr ON cli.cli_rut = contr.cli_rut
-    JOIN Plan pl ON contr.pla_codigo = pl.pla_codigo
-    JOIN Programa prog ON pl.pro_codigo = prog.pro_codigo AND prog.pro_descripcion LIKE '%Pilates%'
-    WHERE contr.fecha >= ADD_MONTHS(SYSDATE, -6) -- contratos en los últimos 6 meses
-    GROUP BY c.com_nombre
-    ORDER BY num_clientes DESC;
-BEGIN
-  DBMS_OUTPUT.PUT_LINE('Ranking de comunas con clientes activos en Pilates:');
-  FOR rec IN cur_comunas LOOP
-    DBMS_OUTPUT.PUT_LINE('Comuna: ' || rec.com_nombre || ' - Número de Clientes: ' || rec.num_clientes);
-  END LOOP;
-END;
 
