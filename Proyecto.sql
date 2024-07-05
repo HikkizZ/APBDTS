@@ -561,4 +561,14 @@ INSERT ALL
         VALUES (5, 'Curso de Nutrición y Bienestar', 14990, 90, 3, TO_DATE('2023-09-06', 'YYYY-MM-DD'), TO_DATE('2023-09-20', 'YYYY-MM-DD'))
 SELECT * FROM dual;
 
+-- Inserción de Salones
+INSERT ALL
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (1, 'Salón 101AA', 30)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (2, 'Salón 102AA', 25)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (3, 'Salón 202AB', 20)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (4, 'Salón 201D', 35)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (5, 'Salón 202D', 40)
+    INTO Salon (sal_codigo, sal_nombre, sal_capacidad) VALUES (6, 'Salón 102AC', 15)
+SELECT * FROM dual;
+
 
