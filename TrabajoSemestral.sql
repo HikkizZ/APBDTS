@@ -693,3 +693,4 @@ INSERT ALL
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
         VALUES (2, TO_DATE('2024-06-14', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '19191919-9')       
 SELECT * FROM dual;
+
