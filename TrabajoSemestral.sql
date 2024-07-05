@@ -613,4 +613,83 @@ INSERT ALL
         VALUES (32, 'Sesión de Yoga Avanzado 8', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
 SELECT * FROM dual;
 
+-- Inserción Relación Padece (Cliente - Patología)
+INSERT ALL
+    INTO Padece (pat_codigo, cli_rut) VALUES (1, '22222222-2') -- Cliente padece Diabetes
+    INTO Padece (pat_codigo, cli_rut) VALUES (2, '22222222-2') -- Cliente padece Hipertensión
+    INTO Padece (pat_codigo, cli_rut) VALUES (3, '33333333-3') -- Cliente padece Asma
+    INTO Padece (pat_codigo, cli_rut) VALUES (4, '55555555-5') -- Cliente padece Autismo
+    INTO Padece (pat_codigo, cli_rut) VALUES (5, '44444444-4') -- Cliente padece Artritis
+    INTO Padece (pat_codigo, cli_rut) VALUES (6, '33333333-3') -- Cliente padece Cáncer
+    INTO Padece (pat_codigo, cli_rut) VALUES (2, '11111112-1') -- Cliente padece Hipertensión
+    INTO Padece (pat_codigo, cli_rut) VALUES (3, '12121212-2') -- Cliente padece Asma
+    INTO Padece (pat_codigo, cli_rut) VALUES (2, '14141414-4') -- Cliente padece Hipertensión
+    INTO Padece (pat_codigo, cli_rut) VALUES (1, '15151515-5') -- Cliente padece Diabetes
+    INTO Padece (pat_codigo, cli_rut) VALUES (1, '18181818-8') -- Cliente padece Diabetes
+    INTO Padece (pat_codigo, cli_rut) VALUES (2, '18181818-8') -- Cliente padece Hipertensión
+SELECT * FROM dual;
 
+-- Inserción Relación Padece (Cliente - Empresa)
+INSERT ALL
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '11111111-1') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '22222222-2') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '33333333-3') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '44444444-4') -- Cliente trabaja en Steam
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (5, '55555555-5') -- Cliente trabaja en Estudio Ghibli
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '66666666-6') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '77777777-7') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '88888888-8') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '99999999-9') -- Cliente trabaja en Steam
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (5, '10101010-0') -- Cliente trabaja en Estudio Ghibli
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '11111112-1') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '12121212-2') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '13131313-3') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '14141414-4') -- Cliente trabaja en Steam
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (5, '15151515-5') -- Cliente trabaja en Estudio Ghibli
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (1, '16161616-6') -- Cliente trabaja en Nestle
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (2, '17171717-7') -- Cliente trabaja en EA Sports
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (3, '18181818-8') -- Cliente trabaja en Carozzi
+    INTO Trabaja (emp_codigo, cli_rut) VALUES (4, '19191919-9') -- Cliente trabaja en Steam
+SELECT * FROM dual;
+
+-- Inserción Relación Posee (Cliente - Estado)
+INSERT ALL
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-06-21', 'YYYY-MM-DD'), TO_DATE('2024-05-31', 'YYYY-MM-DD'), '11111111-1')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2024-01-09', 'YYYY-MM-DD'), TO_DATE('2024-12-31', 'YYYY-MM-DD'), '22222222-2')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-04-05', 'YYYY-MM-DD'), TO_DATE('2024-03-31', 'YYYY-MM-DD'), '33333333-3')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-01-10', 'YYYY-MM-DD'), TO_DATE('2023-12-31', 'YYYY-MM-DD'), '44444444-4')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-09-05', 'YYYY-MM-DD'), TO_DATE('2024-08-31', 'YYYY-MM-DD'), '55555555-5')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (2, TO_DATE('2024-05-07', 'YYYY-MM-DD'), TO_DATE('2024-08-31', 'YYYY-MM-DD'), '66666666-6')
+        INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-11-06', 'YYYY-MM-DD'), TO_DATE('2024-10-31', 'YYYY-MM-DD'), '77777777-7')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-07-07', 'YYYY-MM-DD'), TO_DATE('2024-06-30', 'YYYY-MM-DD'), '88888888-8')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-05-08', 'YYYY-MM-DD'), TO_DATE('2024-04-30', 'YYYY-MM-DD'), '99999999-9')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (2, TO_DATE('2024-06-28', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '10101010-0')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (2, TO_DATE('2023-07-03', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '11111112-1')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-09-04', 'YYYY-MM-DD'), TO_DATE('2024-08-31', 'YYYY-MM-DD'), '12121212-2')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2023-10-02', 'YYYY-MM-DD'), TO_DATE('2024-09-30', 'YYYY-MM-DD'), '13131313-3')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2024-01-03', 'YYYY-MM-DD'), TO_DATE('2024-12-31', 'YYYY-MM-DD'), '14141414-4')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2024-03-04', 'YYYY-MM-DD'), TO_DATE('2025-02-28', 'YYYY-MM-DD'), '15151515-5')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2024-05-28', 'YYYY-MM-DD'), TO_DATE('2025-04-30', 'YYYY-MM-DD'), '16161616-6')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (1, TO_DATE('2024-07-05', 'YYYY-MM-DD'), TO_DATE('2025-06-30', 'YYYY-MM-DD'), '17171717-7')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (2, TO_DATE('2024-06-27', 'YYYY-MM-DD'), TO_DATE('2024-07-26', 'YYYY-MM-DD'), '18181818-8')
+    INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
+        VALUES (2, TO_DATE('2024-06-14', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '19191919-9')       
+SELECT * FROM dual;
