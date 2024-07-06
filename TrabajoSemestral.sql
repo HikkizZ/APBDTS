@@ -835,7 +835,16 @@ INSERT ALL
     INTO Es_asociado (pro_codigo, ins_rut) VALUES (10,'23456789-0')
 SELECT * FROM dual;
 
-
+-- Inserciones en tabla Reside
+INSERT ALL
+    INTO Reside (com_codigo, ins_rut) VALUES (25,'12345678-9')
+    INTO Reside (com_codigo, ins_rut) VALUES (8,'23456789-0')
+    INTO Reside (com_codigo, ins_rut) VALUES (25,'34567890-1')
+    INTO Reside (com_codigo, ins_rut) VALUES (30,'45678901-2')
+    INTO Reside (com_codigo, ins_rut) VALUES (27,'56789012-3')
+    INTO Reside (com_codigo, ins_rut) VALUES (5,'20393210-3')
+    INTO Reside (com_codigo, ins_rut) VALUES (16,'19385987-1')
+SELECT * FROM dual;
 
 -- Inserciones en la tabla Inscribe
 INSERT ALL
