@@ -766,9 +766,42 @@ INSERT ALL
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (2, '13131313-3', TO_DATE('2024-01-03', 'YYYY-MM-DD'))
 SELECT * FROM dual;
 
--- Inserciones en la tabla Agenda
-INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (1, '11111111-1');
-INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (2, '22222222-2');
-INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (3, '33333333-3');
-INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (4, '44444444-4');
-INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (5, '55555555-5');
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+-- Ejercicio 1
+-- Habilitar la salida de DBMS_OUTPUT (Ejecutar al abrir el archivo)
+SET SERVEROUTPUT ON;
+
+-- Declaración del bloque PL/SQL
+DECLARE
+    TYPE t_comuna IS TABLE OF VARCHAR2(20);
+    TYPE t_cantidad IS TABLE OF INTEGER;
+    v_comunas t_comuna;
+    v_cantidades t_cantidad;
+BEGIN
+    SELECT com.com_nombre, COUNT(*) AS cantidad
+    BULK COLLECT INTO v_comunas, v_cantidades
+    FROM Cliente cli
+    JOIN Comuna com ON cli.com_codigo = com.com_codigo
+    JOIN Posee pos ON cli.cli_rut = pos.cli_rut
+    JOIN Contrata con ON cli.cli_rut = con.cli_rut
+    JOIN Plan pla ON con.pla_codigo = pla.pla_codigo
+    JOIN Programa pro ON pla.pro_codigo = pro.pro_codigo
+    JOIN Entrenamiento ent ON pro.pro_codigo = ent.pro_codigo
+    WHERE pos.est_codigo = 1 -- Estado Habilitado
+    AND ent.pro_tipo = 'Pilates'
+    AND con.fecha >= ADD_MONTHS(SYSDATE, -6) -- Últimos 6 meses
+    GROUP BY com.com_nombre
+    ORDER BY cantidad DESC;
+
+    DBMS_OUTPUT.PUT_LINE('Ranking de Comunas');
+    FOR i IN 1 .. v_comunas.COUNT LOOP
+        DBMS_OUTPUT.PUT_LINE(v_comunas(i) || ': ' || v_cantidades(i));
+    END LOOP;
+END;
+
+-- Ejercicio 2
