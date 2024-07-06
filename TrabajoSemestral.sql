@@ -739,8 +739,6 @@ INSERT ALL
         VALUES (2, TO_DATE('2024-06-14', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '19191919-9')       
 SELECT * FROM dual;
 
-delete from posee
-
 -- Inserciones en la tabla Contrata
 INSERT ALL
     INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (4, '22222222-2', TO_DATE('2024-07-01', 'YYYY-MM-DD'))
@@ -826,6 +824,7 @@ INSERT ALL
     INTO Agenda (ses_codigo, cli_rut) VALUES (3, '88888888-8')
 SELECT * FROM dual;
 
+DELETE FROM AGENDA;
 
 
 
@@ -912,4 +911,52 @@ BEGIN
     FOR i IN 1 .. v_cursos.COUNT LOOP
         DBMS_OUTPUT.PUT_LINE(v_cursos(i) || ': ' || v_cantidades_cur(i));
     END LOOP;
+END;
+
+-- Ejercicio 3
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE TRIGGER trg_validar_agenda_sesion
+BEFORE INSERT ON Agenda
+FOR EACH ROW
+DECLARE
+    v_programa_count INTEGER;
+    v_curso_count INTEGER;
+    v_estado VARCHAR2(30);
+    v_fecha_sesion DATE;
+BEGIN
+    -- Obtener la fecha de la sesión
+    SELECT ses_fecha INTO v_fecha_sesion
+    FROM Sesion
+    WHERE ses_codigo = :NEW.ses_codigo;
+
+    -- Validar si el cliente está inscrito en el programa de la sesión
+    SELECT COUNT(*)
+    INTO v_programa_count
+    FROM Inscribe_dos id
+    JOIN Se_da_dos sdd ON id.pro_codigo = sdd.pro_codigo
+    WHERE id.cli_rut = :NEW.cli_rut
+    AND sdd.ses_codigo = :NEW.ses_codigo;
+
+    -- Validar si el cliente está inscrito en el curso de la sesión
+    SELECT COUNT(*)
+    INTO v_curso_count
+    FROM Inscribe i
+    JOIN Se_da sd ON i.cur_codigo = sd.cur_codigo
+    WHERE i.cli_rut = :NEW.cli_rut
+    AND sd.ses_codigo = :NEW.ses_codigo;
+
+    -- Obtener el estado del cliente
+    SELECT e.est_descripcion
+    INTO v_estado
+    FROM Posee p
+    JOIN Estado e ON p.est_codigo = e.est_codigo
+    WHERE p.cli_rut = :NEW.cli_rut
+    AND v_fecha_sesion BETWEEN p.fecha_inicio AND p.fecha_termino;
+
+    -- Validar si el cliente tiene el estado vigente y está inscrito en el programa o curso
+    IF v_programa_count = 0 AND v_curso_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'El cliente no está inscrito en el programa o curso de la sesión.');
+    ELSIF v_estado != 'Habilitado' THEN
+        RAISE_APPLICATION_ERROR(-20002, 'El cliente no está en estado vigente para agendar la sesión.');
+    END IF;
 END;
