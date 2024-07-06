@@ -564,8 +564,6 @@ INSERT ALL
         VALUES (34, 'Sesión de Pilates Nivel Intermedio', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '16:00', 2, '34567890-1')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
         VALUES (35, 'Sesión de Pilates prenatal', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '17:30', 2, '34567890-1')
-    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
-        VALUES (35, 'Sesión de Pilates prenatal', TO_DATE('2024-07-08', 'YYYY-MM-DD'), '19:00', 1, '56789012-3')
 -- Martes
     -- Cursos
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
@@ -605,13 +603,28 @@ INSERT ALL
         VALUES (14, 'Sesión de Pilates Suelo 2', TO_DATE('2024-01-17', 'YYYY-MM-DD'), '11:00', 2, '34567890-1')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
         VALUES (17, 'Sesión de Pilates Suelo 5', TO_DATE('2024-01-24', 'YYYY-MM-DD'), '11:00', 2, '34567890-1')
-
+    -- Programas
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (40, 'Sesión de Yoga Principiante', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '14:30', 1, '23456789-0')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (41, 'Sesion Aero Yoga', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '16:00', 1, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (42, 'Sesión de Pilates con Maquina', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '17:30', 2, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (43, 'Sesión de Pilates Reformer', TO_DATE('2024-07-10', 'YYYY-MM-DD'), '19:30', 2, '34567890-1')
 -- Jueves
     -- Cursos
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
         VALUES (27, 'Sesión de Yoga Avanzado 3', TO_DATE('2024-07-04', 'YYYY-MM-DD'), '10:00', 1, '23456789-0')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
         VALUES (31, 'Sesión de Yoga Avanzado 7', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '10:00', 1, '56789012-3')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut)
+    -- Programa
+        VALUES (44, 'Sesión de Pilates Reformer', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '14:30', 4, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (45, 'Sesión de Yoga Avanzado', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '16:00', 4, '23456789-0') 
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (46, 'Sesión de Kinesiologia con Pilates', TO_DATE('2024-07-11', 'YYYY-MM-DD'), '18:30', 6, '12345678-9')
 -- Viernes
     -- Cursos
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
@@ -634,6 +647,15 @@ INSERT ALL
         VALUES (28, 'Sesión de Yoga Avanzado 4', TO_DATE('2024-07-05', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
         VALUES (32, 'Sesión de Yoga Avanzado 8', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '09:00', 1, '23456789-0')
+    -- Programas
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (47, 'Sesión de Yoga Nivel Intermedio', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '14:30', 4, '23456789-0')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (48, 'Sesión de Yoga Restaurativo', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '16:00', 6, '23456789-0')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (49, 'Sesión de Pilates Nivel Intermedio', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '17:30', 2, '34567890-1')
+    INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
+        VALUES (50, 'Sesión de Pilates Prenatal', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '19:00', 1, '56789012-3')  
 SELECT * FROM dual;
 
 -- Inserción Relación Padece (Cliente - Patología)
@@ -750,4 +772,3 @@ INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (2, '22222222-2');
 INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (3, '33333333-3');
 INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (4, '44444444-4');
 INSERT INTO Agenda (ses_codigo, cli_rut) VALUES (5, '55555555-5');
-
