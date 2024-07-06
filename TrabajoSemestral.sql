@@ -655,7 +655,7 @@ INSERT ALL
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
         VALUES (49, 'Sesión de Pilates Nivel Intermedio', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '17:30', 2, '34567890-1')
     INTO Sesion (ses_codigo, ses_descripcion, ses_fecha, ses_hora, sal_codigo, ins_rut) 
-        VALUES (50, 'Sesión de Pilates Prenatal', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '19:00', 1, '56789012-3')  
+        VALUES (50, 'Sesión de Pilates Prenatal', TO_DATE('2024-07-12', 'YYYY-MM-DD'), '19:00', 1, '34567890-1')  
 SELECT * FROM dual;
 
 -- Inserción Relación Padece (Cliente - Patología)
@@ -811,6 +811,29 @@ INSERT ALL
     INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (9,50)
 SELECT * FROM dual;
 
+-- Inserciones en tabla Imparte
+INSERT ALL
+    INTO Imparte (ins_rut, cur_codigo) VALUES ('23456789-0',1)
+    INTO Imparte (ins_rut, cur_codigo) VALUES ('34567890-1',2)
+    INTO Imparte (ins_rut, cur_codigo) VALUES ('56789012-3',3)
+    INTO Imparte (ins_rut, cur_codigo) VALUES ('20393210-3',4)
+    INTO Imparte (ins_rut, cur_codigo) VALUES ('45678901-2',5)
+    INTO Imparte (ins_rut, cur_codigo) VALUES ('56789012-3',1)
+SELECT * FROM dual;
+
+-- Inserciones en tabla Es_asociado
+INSERT ALL
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (1,'23456789-0')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (2,'34567890-1')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (3,'23456789-0')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (4,'12345678-9')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (5,'56789012-3')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (6,'34567890-1')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (7,'34567890-1')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (8,'23456789-0')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (9,'34567890-1')
+    INTO Es_asociado (pro_codigo, ins_rut) VALUES (10,'23456789-0')
+SELECT * FROM dual;
 
 
 
