@@ -485,6 +485,9 @@ INSERT ALL
     INTO Entrenamiento (pro_codigo, pro_tipo, esp_codigo) VALUES (10, 'Yoga', 10)
 SELECT * FROM dual;
 
+-- Inserciones en tabla Terapia
+INSERT INTO Terapia (pro_codigo) VALUES (4);
+
 -- Inserción de Patologías
 INSERT ALL
     INTO Patologia (pat_codigo, pat_descripcion) VALUES (1, 'Diabetes')
@@ -857,6 +860,13 @@ INSERT ALL
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (1, '10101010-0', TO_DATE('2024-07-02', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (3, '12121212-2', TO_DATE('2023-12-01', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (2, '13131313-3', TO_DATE('2024-01-03', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+-- Inserciones en la tabla Inscribe_dos
+INSERT ALL
+    INTO Inscribe_dos (pro_codigo, fecha, cli_rut) VALUES (6, TO_DATE('2024-07-01', 'YYYY-MM-DD'), '88888888-8') 
+    INTO Inscribe_dos (pro_codigo, fecha, cli_rut) VALUES (2, TO_DATE('2024-07-05', 'YYYY-MM-DD'), '99999999-9')
+    INTO Inscribe_dos (pro_codigo, fecha, cli_rut) VALUES (1, TO_DATE('2024-07-04', 'YYYY-MM-DD'), '66666666-6')
 SELECT * FROM dual;
 
 -- Inserciones en la tabla Agenda
