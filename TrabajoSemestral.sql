@@ -788,6 +788,32 @@ INSERT ALL
     INTO Se_da (cur_codigo, ses_codigo) VALUES (1,31)
     INTO Se_da (cur_codigo, ses_codigo) VALUES (1,32)
 SELECT * FROM dual;
+
+-- Inserciones en tabla Se_da_dos
+INSERT ALL
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (1,33)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (2,34)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (9,35)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (4,36)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (3,37)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (2,38)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (7,39)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (1,40)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (5,41)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (7,42)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (6,43)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (6,44)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (8,45)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (4,46)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (3,47)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (10,48)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (2,49)
+    INTO Se_da_dos (pro_codigo, ses_codigo) VALUES (9,50)
+SELECT * FROM dual;
+
+
+
+
 -- Inserciones en la tabla Inscribe
 INSERT ALL
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (1, '11111111-1', TO_DATE('2024-07-01', 'YYYY-MM-DD'))
@@ -824,7 +850,9 @@ INSERT ALL
     INTO Agenda (ses_codigo, cli_rut) VALUES (3, '88888888-8')
 SELECT * FROM dual;
 
-DELETE FROM AGENDA;
+
+
+
 
 
 
@@ -865,7 +893,8 @@ END;
 -- Ejercicio 2
 -- Habilitar la salida de DBMS_OUTPUT
 SET SERVEROUTPUT ON;
-
+-- Evitar que se vea dos veces el codigo
+SET VERIFY OFF;
 -- Declaración del bloque PL/SQL
 DECLARE
     v_cli_rut Cliente.cli_rut%TYPE := '&Ingrese_el_v_cli_rut';
@@ -960,3 +989,6 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20002, 'El cliente no está en estado vigente para agendar la sesión.');
     END IF;
 END;
+
+-- Ejercicio 4
+
