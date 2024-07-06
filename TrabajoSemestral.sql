@@ -753,17 +753,75 @@ INSERT ALL
     INTO Contrata (pla_codigo, cli_rut, fecha) VALUES (1, '17171717-7', TO_DATE('2023-12-20', 'YYYY-MM-DD'))
 SELECT * FROM dual;
 
+-- Inserciones en la tabla Se_da
+INSERT ALL
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (5,1)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (5,2)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (5,3)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,4)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,5)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,6)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,7)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,8)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,9)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,10)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,11)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (3,12)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (2,13)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (2,14)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (2,15)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (2,16)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (2,17)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (2,18)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (4,19)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (4,20)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (4,21)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (4,22)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (4,23)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (4,24)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,25)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,26)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,27)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,28)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,29)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,30)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,31)
+    INTO Se_da (cur_codigo, ses_codigo) VALUES (1,32)
+SELECT * FROM dual;
 -- Inserciones en la tabla Inscribe
 INSERT ALL
-    INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (1, '11111111-1', TO_DATE('2024-06-17', 'YYYY-MM-DD'))
+    INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (1, '11111111-1', TO_DATE('2024-07-01', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (2, '44444444-4', TO_DATE('2024-01-08', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (3, '66666666-6', TO_DATE('2023-11-23', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (4, '77777777-7', TO_DATE('2024-02-20', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (5, '88888888-8', TO_DATE('2024-08-21', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (5, '99999999-9', TO_DATE('2024-08-15', 'YYYY-MM-DD'))
-    INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (1, '10101010-0', TO_DATE('2024-06-20', 'YYYY-MM-DD'))
+    INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (1, '10101010-0', TO_DATE('2024-07-02', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (3, '12121212-2', TO_DATE('2023-12-01', 'YYYY-MM-DD'))
     INTO Inscribe (cur_codigo, cli_rut, fecha) VALUES (2, '13131313-3', TO_DATE('2024-01-03', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+-- Inserciones en la tabla Agenda
+INSERT ALL
+    INTO Agenda (ses_codigo, cli_rut) VALUES (25, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (26, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (27, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (28, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (29, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (30, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (31, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (32, '11111111-1')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (25, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (26, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (27, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (28, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (29, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (30, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (31, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (32, '10101010-0')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (1, '88888888-8')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (2, '88888888-8')
+    INTO Agenda (ses_codigo, cli_rut) VALUES (3, '88888888-8')
 SELECT * FROM dual;
 
 
@@ -805,3 +863,59 @@ BEGIN
 END;
 
 -- Ejercicio 2
+-- Habilitar la salida de DBMS_OUTPUT
+SET SERVEROUTPUT ON;
+
+-- Declaración de la variable de enlace para el cliente RUT
+VARIABLE v_cli_rut VARCHAR2(12);
+
+-- Solicitar el ingreso del RUT del cliente
+ACCEPT v_cli_rut PROMPT 'Ingrese el RUT del cliente: '
+
+-- Declaración del bloque PL/SQL
+DECLARE
+    TYPE t_programa IS TABLE OF VARCHAR2(35);
+    TYPE t_curso IS TABLE OF VARCHAR2(35);
+    TYPE t_cantidad IS TABLE OF INTEGER;
+    v_programas t_programa;
+    v_cursos t_curso;
+    v_cantidades_prog t_cantidad;
+    v_cantidades_cur t_cantidad;
+BEGIN
+    -- Obtener cantidad de sesiones agendadas por programa
+    SELECT pro.pro_descripcion, COUNT(*) AS cantidad
+    BULK COLLECT INTO v_programas, v_cantidades_prog
+    FROM Sesion ses
+    JOIN Agenda age ON ses.ses_codigo = age.ses_codigo
+    JOIN Se_da_dos sdd ON ses.ses_codigo = sdd.ses_codigo
+    JOIN Programa pro ON sdd.pro_codigo = pro.pro_codigo
+    WHERE age.cli_rut = :v_cli_rut
+    AND EXTRACT(MONTH FROM ses.ses_fecha) = EXTRACT(MONTH FROM SYSDATE)
+    AND EXTRACT(YEAR FROM ses.ses_fecha) = EXTRACT(YEAR FROM SYSDATE)
+    GROUP BY pro.pro_descripcion;
+
+    -- Obtener cantidad de sesiones agendadas por curso
+    SELECT cur.cur_descripcion, COUNT(*) AS cantidad
+    BULK COLLECT INTO v_cursos, v_cantidades_cur
+    FROM Sesion ses
+    JOIN Agenda age ON ses.ses_codigo = age.ses_codigo
+    JOIN Se_da sd ON ses.ses_codigo = sd.ses_codigo
+    JOIN Cursos cur ON sd.cur_codigo = cur.cur_codigo
+    WHERE age.cli_rut = :v_cli_rut
+    AND EXTRACT(MONTH FROM ses.ses_fecha) = EXTRACT(MONTH FROM SYSDATE)
+    AND EXTRACT(YEAR FROM ses.ses_fecha) = EXTRACT(YEAR FROM SYSDATE)
+    GROUP BY cur.cur_descripcion;
+
+    -- Mostrar resultados
+    DBMS_OUTPUT.PUT_LINE('Cantidad de Sesiones Agendadas por Programa:');
+    FOR i IN 1 .. v_programas.COUNT LOOP
+        DBMS_OUTPUT.PUT_LINE(v_programas(i) || ': ' || v_cantidades_prog(i));
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Cantidad de Sesiones Agendadas por Curso:');
+    FOR i IN 1 .. v_cursos.COUNT LOOP
+        DBMS_OUTPUT.PUT_LINE(v_cursos(i) || ': ' || v_cantidades_cur(i));
+    END LOOP;
+END;
+
+
