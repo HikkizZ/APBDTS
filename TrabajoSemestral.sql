@@ -700,7 +700,7 @@ SELECT * FROM dual;
 -- Inserción Relación Posee (Cliente - Estado)
 INSERT ALL
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
-        VALUES (1, TO_DATE('2023-06-21', 'YYYY-MM-DD'), TO_DATE('2024-05-31', 'YYYY-MM-DD'), '11111111-1')
+        VALUES (1, TO_DATE('2023-06-21', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '11111111-1')
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
         VALUES (1, TO_DATE('2024-01-09', 'YYYY-MM-DD'), TO_DATE('2024-12-31', 'YYYY-MM-DD'), '22222222-2')
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
@@ -718,7 +718,7 @@ INSERT ALL
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
         VALUES (1, TO_DATE('2023-05-08', 'YYYY-MM-DD'), TO_DATE('2024-04-30', 'YYYY-MM-DD'), '99999999-9')
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
-        VALUES (2, TO_DATE('2024-06-28', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '10101010-0')
+        VALUES (1, TO_DATE('2024-06-28', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '10101010-0')
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
         VALUES (2, TO_DATE('2023-07-03', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '11111112-1')
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
@@ -738,6 +738,8 @@ INSERT ALL
     INTO Posee (est_codigo, fecha_inicio, fecha_termino, cli_rut)
         VALUES (2, TO_DATE('2024-06-14', 'YYYY-MM-DD'), TO_DATE('2024-07-31', 'YYYY-MM-DD'), '19191919-9')       
 SELECT * FROM dual;
+
+delete from posee
 
 -- Inserciones en la tabla Contrata
 INSERT ALL
@@ -828,7 +830,6 @@ SELECT * FROM dual;
 
 
 
-
 ----------------------------------------------------------------------------------------------------------------------------------------------
 -- Ejercicio 1
 -- Habilitar la salida de DBMS_OUTPUT (Ejecutar al abrir el archivo)
@@ -866,14 +867,9 @@ END;
 -- Habilitar la salida de DBMS_OUTPUT
 SET SERVEROUTPUT ON;
 
--- Declaración de la variable de enlace para el cliente RUT
-VARIABLE v_cli_rut VARCHAR2(12);
-
--- Solicitar el ingreso del RUT del cliente
-ACCEPT v_cli_rut PROMPT 'Ingrese el RUT del cliente: '
-
 -- Declaración del bloque PL/SQL
 DECLARE
+    v_cli_rut Cliente.cli_rut%TYPE := '&Ingrese_el_v_cli_rut';
     TYPE t_programa IS TABLE OF VARCHAR2(35);
     TYPE t_curso IS TABLE OF VARCHAR2(35);
     TYPE t_cantidad IS TABLE OF INTEGER;
@@ -889,7 +885,7 @@ BEGIN
     JOIN Agenda age ON ses.ses_codigo = age.ses_codigo
     JOIN Se_da_dos sdd ON ses.ses_codigo = sdd.ses_codigo
     JOIN Programa pro ON sdd.pro_codigo = pro.pro_codigo
-    WHERE age.cli_rut = :v_cli_rut
+    WHERE age.cli_rut = v_cli_rut
     AND EXTRACT(MONTH FROM ses.ses_fecha) = EXTRACT(MONTH FROM SYSDATE)
     AND EXTRACT(YEAR FROM ses.ses_fecha) = EXTRACT(YEAR FROM SYSDATE)
     GROUP BY pro.pro_descripcion;
@@ -901,7 +897,7 @@ BEGIN
     JOIN Agenda age ON ses.ses_codigo = age.ses_codigo
     JOIN Se_da sd ON ses.ses_codigo = sd.ses_codigo
     JOIN Cursos cur ON sd.cur_codigo = cur.cur_codigo
-    WHERE age.cli_rut = :v_cli_rut
+    WHERE age.cli_rut = v_cli_rut
     AND EXTRACT(MONTH FROM ses.ses_fecha) = EXTRACT(MONTH FROM SYSDATE)
     AND EXTRACT(YEAR FROM ses.ses_fecha) = EXTRACT(YEAR FROM SYSDATE)
     GROUP BY cur.cur_descripcion;
@@ -917,5 +913,3 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE(v_cursos(i) || ': ' || v_cantidades_cur(i));
     END LOOP;
 END;
-
-
