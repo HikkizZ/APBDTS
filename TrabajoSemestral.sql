@@ -986,43 +986,66 @@ END;
 
 -- Ejercicio 3
 SET SERVEROUTPUT ON;
+
+drop trigger trg_validar_agenda_sesion
+
 CREATE OR REPLACE TRIGGER trg_validar_agenda_sesion
 BEFORE INSERT ON Agenda
 FOR EACH ROW
 DECLARE
-    v_programa_count INTEGER;
-    v_curso_count INTEGER;
+    v_programa_count INTEGER := 0;
+    v_curso_count INTEGER := 0;
     v_estado VARCHAR2(30);
     v_fecha_sesion DATE;
 BEGIN
     -- Obtener la fecha de la sesión
-    SELECT ses_fecha INTO v_fecha_sesion
-    FROM Sesion
-    WHERE ses_codigo = :NEW.ses_codigo;
+    BEGIN
+        SELECT ses_fecha INTO v_fecha_sesion
+        FROM Sesion
+        WHERE ses_codigo = :NEW.ses_codigo;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RAISE_APPLICATION_ERROR(-20003, 'La sesión no existe.');
+    END;
 
     -- Validar si el cliente está inscrito en el programa de la sesión
-    SELECT COUNT(*)
-    INTO v_programa_count
-    FROM Inscribe_dos id
-    JOIN Se_da_dos sdd ON id.pro_codigo = sdd.pro_codigo
-    WHERE id.cli_rut = :NEW.cli_rut
-    AND sdd.ses_codigo = :NEW.ses_codigo;
+    BEGIN
+        SELECT COUNT(*)
+        INTO v_programa_count
+        FROM Inscribe_dos id
+        JOIN Se_da_dos sdd ON id.pro_codigo = sdd.pro_codigo
+        WHERE id.cli_rut = :NEW.cli_rut
+        AND sdd.ses_codigo = :NEW.ses_codigo;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            v_programa_count := 0;
+    END;
 
     -- Validar si el cliente está inscrito en el curso de la sesión
-    SELECT COUNT(*)
-    INTO v_curso_count
-    FROM Inscribe i
-    JOIN Se_da sd ON i.cur_codigo = sd.cur_codigo
-    WHERE i.cli_rut = :NEW.cli_rut
-    AND sd.ses_codigo = :NEW.ses_codigo;
+    BEGIN
+        SELECT COUNT(*)
+        INTO v_curso_count
+        FROM Inscribe i
+        JOIN Se_da sd ON i.cur_codigo = sd.cur_codigo
+        WHERE i.cli_rut = :NEW.cli_rut
+        AND sd.ses_codigo = :NEW.ses_codigo;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            v_curso_count := 0;
+    END;
 
     -- Obtener el estado del cliente
-    SELECT e.est_descripcion
-    INTO v_estado
-    FROM Posee p
-    JOIN Estado e ON p.est_codigo = e.est_codigo
-    WHERE p.cli_rut = :NEW.cli_rut
-    AND v_fecha_sesion BETWEEN p.fecha_inicio AND p.fecha_termino;
+    BEGIN
+        SELECT e.est_descripcion
+        INTO v_estado
+        FROM Posee p
+        JOIN Estado e ON p.est_codigo = e.est_codigo
+        WHERE p.cli_rut = :NEW.cli_rut
+        AND v_fecha_sesion BETWEEN p.fecha_inicio AND p.fecha_termino;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RAISE_APPLICATION_ERROR(-20004, 'El cliente no tiene un estado vigente para la fecha de la sesión.');
+    END;
 
     -- Validar si el cliente tiene el estado vigente y está inscrito en el programa o curso
     IF v_programa_count = 0 AND v_curso_count = 0 THEN
@@ -1031,6 +1054,5 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20002, 'El cliente no está en estado vigente para agendar la sesión.');
     END IF;
 END;
-
 -- Ejercicio 4
 
